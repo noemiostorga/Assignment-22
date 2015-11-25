@@ -44,22 +44,17 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */ var React = __webpack_require__ (1);
-	 var ReactDOM = __webpack_require__ (158);
-	 var Backbone = __webpack_require__ (159);
-	 /*var CountLike = require ('countLike');*/
+	/** @jsx React.DOM */var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(158);
+	var Backbone = __webpack_require__(159);
+	var LikeButton = __webpack_require__(162);
 
-	var LikeBtn = React.createClass({displayName: "LikeBtn",
-		render: function () {
-			return(
-			React.createElement("div", null, 
-				React.createElement("button", null, "like")
-			)
-			)
-		}
-	});
 
-	ReactDOM.render(React.createElement(LikeBtn, null), document.getElementById('LikeBtn'));
+
+	ReactDOM.render(React.createElement(LikeButton, null), document.getElementById('LikeBtn'));
+
+
+
 
 
 /***/ },
@@ -32319,6 +32314,38 @@
 
 	}));
 
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(158);
+
+	var LikeButton = React.createClass({displayName: "LikeButton",
+	  _Click: function() {
+	    this.setState({
+	      count: this.state.count + 1
+	    });
+	  },
+
+	  getInitialState: function() {
+	    return {
+	      count: 0
+	    }
+	  },
+	  render: function() {
+	    var like = " like"
+	    if(this.state.count === 1) {
+	      like = " like"
+	    }
+	    return (
+	      React.createElement("button", {id: "button", onClick: this._Click}, " ", this.state.count + like)
+	    )
+	  }
+	});
+
+	module.exports=LikeButton;
 
 /***/ }
 /******/ ]);
