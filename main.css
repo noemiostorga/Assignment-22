@@ -1,13 +1,16 @@
 #button {
-	height: 80px;
-	background: blue;
-	color: white;
+	margin: 0 auto;
 	border: none;
 	font-size: 3em;
-
+	background: white;
+	border-bottom: 10px solid tomato;
+	-webkit-transition:background .5s ease, border-bottom .2s ease;
 }
 
 
 #button:active {
-	background: lightblue;
+	background: tomato;
+	border-bottom: 1px solid black ;
+
+
 }
